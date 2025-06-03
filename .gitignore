@@ -4,3 +4,5 @@ __pycache__/
 .web
 assets/external/
 *.py[cod]
+requirements_new.txt
+requirements_backup.txt
