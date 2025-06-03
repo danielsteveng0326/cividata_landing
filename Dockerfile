@@ -32,4 +32,4 @@ RUN reflex export --frontend-only --no-zip
 EXPOSE 8000
 
 # Comando para ejecutar la aplicación en modo producción
-CMD ["reflex", "run", "--env", "prod", "--backend-only"]
+CMD ["reflex", "run", "--env", "prod", "--backend-only", "--host", "0.0.0.0"]

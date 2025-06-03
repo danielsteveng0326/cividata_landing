@@ -9,5 +9,5 @@ config = rx.Config(
     frontend_port=3000,
     backend_port=int(os.environ.get("PORT", 8000)),
     # Configuración adicional para Railway
-    api_url=os.environ.get("RAILWAY_PUBLIC_DOMAIN", "localhost:8000"),
+    api_url=f"http://0.0.0.0:{os.environ.get('PORT', 8000)}",
 )
