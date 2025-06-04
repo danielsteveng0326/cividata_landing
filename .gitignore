@@ -6,3 +6,6 @@ assets/external/
 *.py[cod]
 requirements_new.txt
 requirements_backup.txt
+frontend.zip
+/venv
+/venv_clean
