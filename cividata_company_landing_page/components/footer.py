@@ -90,7 +90,7 @@ def footer() -> rx.Component:
                                 class_name="mt-2 text-sm text-gray-600 max-w-xs",
                             ),
                             rx.el.p(
-                                "cividatacol@gmail.com",
+                                "cividata@gmail.com",
                                 class_name="mt-2 text-sm text-gray-600 max-w-xs",
                             ),
                             rx.el.p(
