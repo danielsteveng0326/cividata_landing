@@ -43,37 +43,37 @@ def footer() -> rx.Component:
                         href="/",
                     ),
                     rx.el.p(
-                        "Transformamos Entidades con Soluciones Basadas en Datos.",
+                        "Empowering local governments with data-driven decisions.",
                         class_name="mt-2 text-sm text-gray-600 max-w-xs",
                     ),
                 ),
                 rx.el.div(
                     rx.el.div(
                         rx.el.h3(
-                            "Plataforma",
+                            "Platform",
                             class_name="text-sm font-semibold text-gray-900 tracking-wider uppercase",
                         ),
                         rx.el.ul(
                             rx.el.li(
                                 footer_link(
-                                    "Monitoreo de Contratación",
+                                    "Contract Monitoring",
                                     "#modules",
                                 )
                             ),
                             rx.el.li(
                                 footer_link(
-                                    "Seguimiento al Plan de Desarrollo",
+                                    "Development Plans",
                                     "#modules",
                                 )
                             ),
                             rx.el.li(
                                 footer_link(
-                                    "Observatorios Inteligentes", "#modules"
+                                    "Geoportals", "#modules"
                                 )
                             ),
                             rx.el.li(
                                 footer_link(
-                                    "Enfoque en inteligencia Institucional", "#modules"
+                                    "Pricing", "#pricing"
                                 )
                             ),
                             class_name="mt-4 space-y-2",
@@ -81,21 +81,25 @@ def footer() -> rx.Component:
                     ),
                     rx.el.div(
                         rx.el.h3(
-                            "Contáctanos",
+                            "Company",
                             class_name="text-sm font-semibold text-gray-900 tracking-wider uppercase",
                         ),
                         rx.el.ul(
-                            rx.el.p(
-                                "+57 3207803362",
-                                class_name="mt-2 text-sm text-gray-600 max-w-xs",
+                            rx.el.li(
+                                footer_link("About Us", "#")
                             ),
-                            rx.el.p(
-                                "cividata@gmail.com",
-                                class_name="mt-2 text-sm text-gray-600 max-w-xs",
+                            rx.el.li(
+                                footer_link("Careers", "#")
                             ),
-                            rx.el.p(
-                                "Antioquia, Colombia",
-                                class_name="mt-2 text-sm text-gray-600 max-w-xs",
+                            rx.el.li(
+                                footer_link(
+                                    "Contact Sales", "#cta"
+                                )
+                            ),
+                            rx.el.li(
+                                footer_link(
+                                    "Privacy Policy", "#"
+                                )
                             ),
                             class_name="mt-4 space-y-2",
                         ),
@@ -106,7 +110,7 @@ def footer() -> rx.Component:
             ),
             rx.el.div(
                 rx.el.p(
-                    f"© {LandingState.current_year} CiviData, Inc. Todos los Derechos Reservados.",
+                    f"© {LandingState.current_year} CiviData, Inc. All rights reserved.",
                     class_name="text-sm text-gray-500",
                 ),
                 rx.el.div(
@@ -122,7 +126,7 @@ def footer() -> rx.Component:
                     ),
                     social_icon_link(
                         "mail",
-                        "mailto:cividatacol@gmail.com",
+                        "mailto:info@cividata.com",
                         "Email CiviData",
                     ),
                     class_name="flex space-x-5",

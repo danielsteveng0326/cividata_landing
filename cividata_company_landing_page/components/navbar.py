@@ -20,29 +20,29 @@ def navbar() -> rx.Component:
             ),
             rx.el.nav(
                 rx.el.a(
-                    "Modulos",
+                    "Modules",
                     href="#modules",
                     class_name="text-gray-600 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-colors",
                 ),
-                #rx.el.a(
-                #    "Pricing",
-                #    href="#pricing",
-                #    class_name="text-gray-600 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                #),
-                #rx.el.a(
-                #    "Testimonials",
-                #    href="#testimonials",
-                #    class_name="text-gray-600 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                #),
                 rx.el.a(
-                    "Prueba CiviData",
+                    "Pricing",
+                    href="#pricing",
+                    class_name="text-gray-600 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                ),
+                rx.el.a(
+                    "Testimonials",
+                    href="#testimonials",
+                    class_name="text-gray-600 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                ),
+                rx.el.a(
+                    "Request Demo",
                     href="#cta",
                     class_name="text-gray-600 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-colors",
                 ),
                 class_name="hidden md:flex space-x-4",
             ),
             rx.el.button(
-                "Prueba CiviData",
+                "Request Demo",
                 on_click=lambda: rx.call_script(
                     "document.getElementById('cta').scrollIntoView({ behavior: 'smooth' });"
                 ),

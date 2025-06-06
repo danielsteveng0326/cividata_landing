@@ -14,8 +14,8 @@ def index() -> rx.Component:
         navbar(),
         hero_section(),
         features_section(),
-        #pricing_section(),
-        #testimonials_section(),
+        pricing_section(),
+        testimonials_section(),
         cta_section(),
         footer(),
         app_toast(),
@@ -42,5 +42,5 @@ app = rx.App(
     ],
 )
 app.add_page(
-    index, title="CiviData - Transformamos Entidades con Decisiones Basadas en Datos"
+    index, title="CiviData - Empowering Local Governments"
 )

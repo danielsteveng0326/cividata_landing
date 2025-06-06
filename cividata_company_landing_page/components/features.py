@@ -29,15 +29,15 @@ def features_section() -> rx.Component:
     return rx.el.section(
         rx.el.div(
             rx.el.h2(
-                "Transformación de lo cotidiano ",
+                "Core ",
                 rx.el.span(
-                    "en Gestión Inteligente.",
+                    "CiviData Modules",
                     class_name="text-teal-600",
                 ),
                 class_name="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-4",
             ),
             rx.el.p(
-                "Impulsamos la eficiencia operativa y la toma de decisiones con soluciones integradas de análisis, monitoreo y visualización geoespacial.",
+                "Explore the key modules CiviData offers to enhance civic operations and decision-making.",
                 class_name="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto",
             ),
             rx.el.div(

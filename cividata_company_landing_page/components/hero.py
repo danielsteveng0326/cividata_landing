@@ -7,27 +7,27 @@ def hero_section() -> rx.Component:
         rx.el.div(
             rx.el.div(
                 rx.el.h1(
-                    "Transformamos Entidades con ",
+                    "Empowering Local Governments with ",
                     rx.el.span(
-                        "Soluciones Basadas en Datos",
+                        "Data-Driven Decisions",
                         class_name="text-teal-600",
                     ),
                     class_name="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight",
                 ),
                 rx.el.p(
-                    "CiviData potencia la gestión de su entidad con inteligencia artificial, facilitando el monitoreo de contratos, el análisis estratégico y observatorios interactivos para una toma de decisiones más eficaz.",
+                    "CiviData provides an AI-powered platform for contract monitoring, development plan analysis, and interactive geoportals to build smarter, more responsive communities.",
                     class_name="mt-6 max-w-2xl text-lg sm:text-xl text-gray-600",
                 ),
                 rx.el.div(
                     rx.el.button(
-                        "Prueba CiviData",
+                        "Request a Demo",
                         on_click=lambda: rx.call_script(
                             "document.getElementById('cta').scrollIntoView({ behavior: 'smooth' });"
                         ),
                         class_name="px-8 py-3 bg-teal-600 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-teal-700 transition-colors transform hover:scale-105",
                     ),
                     rx.el.button(
-                        "Explorar Módulos",
+                        "Explore Modules",
                         on_click=lambda: rx.call_script(
                             "document.getElementById('modules').scrollIntoView({ behavior: 'smooth' });"
                         ),
@@ -39,9 +39,9 @@ def hero_section() -> rx.Component:
             ),
             rx.el.div(
                 rx.image(
-                    src="/placeholder.png",
+                    src="/placeholder.svg",
                     alt="CiviData Platform Illustration",
-                    class_name="w-full max-w-md lg:max-w-lg rounded-lg",
+                    class_name="w-full max-w-md lg:max-w-lg rounded-lg shadow-xl",
                 ),
                 class_name="mt-12 sm:mt-0 flex justify-center",
             ),

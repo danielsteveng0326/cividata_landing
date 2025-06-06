@@ -2,12 +2,7 @@ import reflex as rx
 from typing import TypedDict, List
 import re
 import datetime
-import os
-from dotenv import load_dotenv
-from supabase import create_client, Client
 
-# Cargar variables de entorno
-load_dotenv()
 
 class ModuleHighlight(TypedDict):
     icon: str
@@ -40,40 +35,31 @@ def is_valid_email(email: str) -> bool:
 
 
 class LandingState(rx.State):
-    # Estados para el formulario
-    email: str = ""
-    is_loading: bool = False
-    message: str = ""
-    message_type: str = "info"  # success, error, info
-    
-    # Estados originales del toast
     email_input: str = ""
     show_toast: bool = False
     toast_message: str = ""
     toast_status: str = "success"
     selected_module_for_toast: str = ""
-    
-    # Datos estáticos
     module_highlights_data: list[ModuleHighlight] = [
         {
             "icon": "file-signature",
-            "title": "Monitoreo de Contratación",
-            "description": "Vigilancia estratégica de la contratación pública, promoviendo el cumplimiento y la rendición de cuentas.",
+            "title": "Contract Monitoring",
+            "description": "AI-powered oversight of public contracts for transparency and compliance.",
         },
         {
             "icon": "clipboard-check",
-            "title": "Seguimiento al Plan de Desarrollo",
-            "description": "Seguimiento y Evaluación del Plan de Desarrollo.",
+            "title": "Development Plan Analysis",
+            "description": "Optimize urban planning with data-driven insights into development proposals.",
         },
         {
             "icon": "map",
-            "title": "Observatorios Inteligentes",
-            "description": "Visualiza datos clave en tiempo real para fortalecer la planeación y gestión institucional.",
+            "title": "Interactive Geoportals",
+            "description": "Visualize civic data on dynamic maps for enhanced community engagement.",
         },
         {
             "icon": "bar-chart-big",
-            "title": "Enfoque en inteligencia institucional",
-            "description": "Moderniza la toma de decisiones con herramientas basadas en datos y análisis automatizado.",
+            "title": "Data-Driven Decisions",
+            "description": "Empower your administration with actionable intelligence from diverse data sources.",
         },
     ]
     testimonials_data: list[TestimonialEntry] = [
@@ -144,72 +130,22 @@ class LandingState(rx.State):
     ]
 
     @rx.event
-    def set_email(self, email: str):
-        """Actualizar el valor del email"""
-        self.email = email
-        self.message = ""  # Limpiar mensaje previo
-
-    def _get_supabase_client(self) -> Client:
-        """Crear cliente de Supabase"""
-        supabase_url = os.getenv("SUPABASE_URL")
-        supabase_key = os.getenv("SUPABASE_KEY")
-        
-        if not supabase_url or not supabase_key:
-            raise ValueError("Faltan las credenciales de Supabase en el archivo .env")
-        
-        return create_client(supabase_url, supabase_key)
-
-    @rx.event
-    async def handle_demo_request(self, form_data: dict):
-        """Manejar la solicitud de demo y guardar en Supabase"""
-        email = form_data.get("email", "") or self.email
-        
-        # Validar email
+    def handle_demo_request(self, form_data: dict):
+        email = form_data.get("email", "")
         if not email or not is_valid_email(email):
-            self.message = "Por favor ingresa un correo electrónico válido."
-            self.message_type = "error"
+            self.toast_message = (
+                "Please enter a valid email address."
+            )
+            self.toast_status = "error"
+            self.show_toast = True
             return
-        
-        # Mostrar estado de carga
-        self.is_loading = True
-        self.message = ""
-        
-        try:
-            # Conectar con Supabase
-            supabase = self._get_supabase_client()
-            
-            # Insertar email en la base de datos
-            result = supabase.table("email_subscribers").insert({
-                "email": email,
-                "source": "landing_page_demo",
-                "subscribed_at": datetime.datetime.now().isoformat()
-            }).execute()
-            
-            # Éxito
-            self.message = "¡Gracias por tu interés! Te contactaremos pronto para agendar tu demostración de CiviData."
-            self.message_type = "success"
-            self.email = ""  # Limpiar campo
-            
-            print(f"✅ Email guardado exitosamente: {email}")
-            
-        except Exception as e:
-            # Manejar errores específicos
-            error_message = str(e).lower()
-            
-            if "duplicate key" in error_message or "unique constraint" in error_message:
-                self.message = "Este correo ya está registrado. Te contactaremos pronto."
-                self.message_type = "error"
-            elif "network" in error_message or "connection" in error_message:
-                self.message = "Error de conexión. Por favor intenta de nuevo."
-                self.message_type = "error"
-            else:
-                self.message = "Hubo un problema al procesar tu solicitud. Intenta de nuevo."
-                self.message_type = "error"
-            
-            print(f"❌ Error al guardar email: {e}")
-        
-        finally:
-            self.is_loading = False
+        print(
+            f"CiviData Demo request received for: {email}"
+        )
+        self.toast_message = f"Thank you! We'll contact {email} shortly with demo details for CiviData."
+        self.toast_status = "success"
+        self.show_toast = True
+        self.email_input = ""
 
     @rx.event
     def handle_pricing_cta_click(self, tier_name: str):
