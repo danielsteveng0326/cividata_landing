@@ -5,5 +5,5 @@ config = rx.Config(
     app_name="cividata_company_landing_page",
     plugins=[rx.plugins.TailwindV3Plugin()],
     backend_host="0.0.0.0",
-    backend_port=int(os.environ.get("PORT", 3000)),
+    backend_port=int(os.environ.get("PORT", 8000)),
 )
