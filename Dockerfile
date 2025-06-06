@@ -22,14 +22,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copia el resto del código
 COPY . .
 
-# Inicializa el proyecto Reflex (esto instalará Bun y compilará el frontend)
+# Inicializa el proyecto Reflex
 RUN reflex init
 
-# Exporta el frontend para producción
-RUN reflex export --frontend-only --no-zip
+# Expone el puerto 3000 (que es el que Railway tiene configurado)
+EXPOSE 3000
 
-# Expone el puerto
-EXPOSE 8000
-
-# Comando para ejecutar la aplicación en modo producción
-CMD ["reflex", "run", "--env", "prod", "--backend-only", "--host", "0.0.0.0"]
+# Comando para ejecutar la aplicación completa en modo producción
+# Frontend y backend en el mismo puerto que Railway espera
+CMD ["reflex", "run", "--env", "prod", "--frontend-port", "3000", "--backend-port", "3000", "--backend-host", "0.0.0.0"]
