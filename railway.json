@@ -3,6 +3,6 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "reflex run --env prod"
+    "startCommand": "reflex run --env prod --frontend-port $PORT --backend-port $PORT"
   }
 }
