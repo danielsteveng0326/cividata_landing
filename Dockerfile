@@ -10,8 +10,8 @@ RUN apk add --no-cache git
 # Copiar archivos de dependencias
 COPY package*.json ./
 
-# Limpiar cache npm y instalar dependencias
-RUN npm ci --only=production=false
+# Instalar dependencias
+RUN npm install
 
 # Copiar código fuente
 COPY . .
@@ -24,9 +24,6 @@ FROM nginx:alpine AS production
 
 # Copiar archivos construidos desde el builder
 COPY --from=builder /app/dist /usr/share/nginx/html
-
-# Copiar configuración custom de nginx si la tienes
-# COPY nginx.conf /etc/nginx/nginx.conf
 
 # Exponer puerto 80
 EXPOSE 80
