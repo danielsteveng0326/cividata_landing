@@ -31,8 +31,9 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 # Crear directorio para logs si no existe
 RUN mkdir -p /var/log/nginx
 
-# Exponer puerto 80
-EXPOSE 80
+# Railway usa una variable de entorno PORT
+ENV PORT=80
+EXPOSE $PORT
 
-# Comando por defecto
-CMD ["nginx", "-g", "daemon off;"]
+# Comando que permite usar el puerto dinámico de Railway
+CMD ["sh", "-c", "sed -i 's/listen 80/listen '\"$PORT\"'/g' /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
