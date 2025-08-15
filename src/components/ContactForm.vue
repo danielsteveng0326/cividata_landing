@@ -9,6 +9,7 @@
       </p>
       <a href="https://meetings.hubspot.com/dania-gonzalez" 
          target="_blank" 
+         @click="handleDemoClick"
          class="inline-flex items-center bg-white text-blue-600 font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 space-x-2">
         <span>Solicita tu demo gratuita</span>
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -18,3 +19,13 @@
     </div>
   </section>
 </template>
+
+<script setup>
+import { useAnalytics } from '../composables/useAnalytics.js'
+
+const { trackDemoRequest } = useAnalytics()
+
+const handleDemoClick = () => {
+  trackDemoRequest()
+}
+</script>
