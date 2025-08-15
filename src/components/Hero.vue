@@ -41,7 +41,7 @@
 
           <!-- CTA buttons -->
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href="https://wa.me/573207803362" 
+            <a href="https://wa.me/573002701230" 
                target="_blank" 
                class="group bg-white text-teal-600 font-semibold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center space-x-2">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -50,7 +50,7 @@
               <span>Conversemos por WhatsApp</span>
             </a>
             
-            <a href="#contacto" 
+            <a href="https://meetings.hubspot.com/dania-gonzalez" 
                class="group border-2 border-white/30 px-8 py-4 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300 flex items-center justify-center space-x-2">
               <span>Solicita una demo</span>
               <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

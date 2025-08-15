@@ -23,9 +23,9 @@
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">Enlaces Rápidos</h3>
           <ul class="space-y-2 text-gray-400">
-            <li><a href="#inicio" class="hover:text-teal-400 transition-colors">Inicio</a></li>
-            <li><a href="#caracteristicas" class="hover:text-teal-400 transition-colors">Características</a></li>
-            <li><a href="https://wa.me/573207803362" target="_blank" class="hover:text-teal-400 transition-colors">Solicitar Demo</a></li>
+            <li><a href="#" class="hover:text-teal-400 transition-colors">Inicio</a></li>
+            <li><a href="#" class="hover:text-teal-400 transition-colors">Características</a></li>
+            <li><a href="https://wa.me/573002701230" target="_blank" class="hover:text-teal-400 transition-colors">Solicitar Demo</a></li>
             <li><a href="mailto:info@cividata.co" class="hover:text-teal-400 transition-colors">Contacto</a></li>
           </ul>
         </div>
@@ -44,7 +44,7 @@
             </a>
             
             <!-- WhatsApp -->
-            <a href="https://wa.me/573207803362" 
+            <a href="https://wa.me/573002701230" 
                target="_blank" 
                class="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300">
               <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">

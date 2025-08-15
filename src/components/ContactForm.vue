@@ -7,7 +7,7 @@
       <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
         Únete a los equipos más innovadores que ya digitalizaron sus procesos
       </p>
-      <a href="https://wa.me/573207803362" 
+      <a href="https://meetings.hubspot.com/dania-gonzalez" 
          target="_blank" 
          class="inline-flex items-center bg-white text-blue-600 font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 space-x-2">
         <span>Solicita tu demo gratuita</span>
