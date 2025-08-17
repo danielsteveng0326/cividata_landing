@@ -51,7 +51,7 @@
               <span>Conversemos por WhatsApp</span>
             </a>
             
-            <a href="https://meetings.hubspot.com/dania-gonzalez" 
+            <a href="https://calendly.com/cividata/30min" 
                target="_blank"
                @click="handleDemoClick"
                class="group border-2 border-white/30 px-8 py-4 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300 flex items-center justify-center space-x-2">
