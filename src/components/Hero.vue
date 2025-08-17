@@ -26,16 +26,16 @@
           <!-- Main heading -->
           <div class="space-y-">
             <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
-              La Plataforma
+              Gestiona la
               <span class="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
-                #1 para la gestión Inteligente 
+                contratación estatal de tu entidad 
               </span>
-              <span class="block">de Contratos Estatales</span>
+              
+              <span class="block">de manera inteligente y sin riesgos</span>
             </h1>
-            
-            <p class="text-xl text-teal-100 leading-relaxed max-w-lg">
-              CiviData es una solución integral que automatiza, visualiza y optimiza 
-              los procesos de contratación pública.
+            <br></br>
+            <p class="text-xl text-teal-200 leading-relaxed max-w-lg">
+              CiviData centraliza, organiza y alerta tus contratos en tiempo real.
             </p>
           </div>
 
@@ -65,16 +65,16 @@
           <!-- Stats -->
           <div class="grid grid-cols-3 gap-6 pt-8">
             <div class="text-center">
-              <div class="text-3xl font-bold text-yellow-300">900+</div>
+              <div class="text-3xl font-bold text-yellow-300">10.000+</div>
               <div class="text-sm text-teal-100">Contratos Automatizados</div>
             </div>
             <div class="text-center">
-              <div class="text-3xl font-bold text-yellow-300">80%</div>
-              <div class="text-sm text-teal-100">Reducción Tiempo</div>
+              <div class="text-3xl font-bold text-yellow-300">90%</div>
+              <div class="text-sm text-teal-100">Reducción Tiempo en Reportes</div>
             </div>
             <div class="text-center">
-              <div class="text-3xl font-bold text-yellow-300">100%</div>
-              <div class="text-sm text-teal-100">Cumplimiento</div>
+              <div class="text-3xl font-bold text-yellow-300">0</div>
+              <div class="text-sm text-teal-100">Sanciones por vencimientos contractuales</div>
             </div>
           </div>
         </div>

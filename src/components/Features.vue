@@ -8,15 +8,14 @@
       <!-- Header Section -->
       <div class="text-center mb-16">
         <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-          ¿Qué puedes hacer con 
+          Todo lo que necesitas para controlar tu contratación en un solo lugar...
           <span class="text-blue-600">
-            civiData?
+            CiviData
           </span>
         </h2>
         
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Una plataforma completa que con la ayuda de inteligencia artificial,
-          hace que hace tu gestión contractual sea fácil, ágil, segura y transparente.
+          
         </p>
       </div>
 
@@ -170,23 +169,28 @@ const CpuChipIcon = () => h('svg', {
 
 const features = [
   { 
-    title: 'Automatización de reportes', 
-    desc: 'Genera informes listos para entes de control sin esfuerzo. Sistema inteligente que cumple con todos los requerimientos normativos.',
+    title: '🔔 Alertas automáticas de vencimiento', 
+    desc: 'Evita sanciones y reprocesos con notificaciones sobre contratos próximos a finalizar.',
     icon: DocumentTextIcon
   },
   { 
-    title: 'Visualización en tiempo real', 
-    desc: 'Consulta la gestión contractual desde un tablero actualizado. Dashboards interactivos con métricas clave del proceso.',
+    title: '📊 Dashboard inteligente y centralizado', 
+    desc: 'Toda la información contractual en tiempo real, organizada y lista para la toma de decisiones.',
     icon: ChartBarIcon
   },
   { 
-    title: 'Decisiones basadas en datos', 
-    desc: 'Analiza indicadores clave desde tableros interactivos. Inteligencia de negocio aplicada a la contratación pública.',
+    title: '🤝 Gestión de contratos interadministrativos', 
+    desc: 'Control especializado para EDU y entidades públicas. Visualiza y organiza convenios interadministrativos según sus fechas críticas.',
     icon: LightBulbIcon
   },
   { 
-    title: 'Generación de actas y reportes', 
-    desc: 'Crea actas automáticas listas para firmar y archivar. Documentación completa con firma digital.',
+    title: '📂 Reportes automáticos y exportables', 
+    desc: 'Genera reportes en Excel, PDF o texto plano con un solo clic. Responde rápido a entes de control y mejora la transparencia.',
+    icon: ClipboardListIcon
+  },
+  { 
+    title: '⚡ Optimización y ahorro de tiempo', 
+    desc: 'Automatiza tareas repetitivas, reduce la carga operativa y libera a tu equipo para enfocarse en lo estratégico.',
     icon: ClipboardListIcon
   }
 ]
