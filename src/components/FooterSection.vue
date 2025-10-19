@@ -97,7 +97,7 @@ const socialLinks = [
   { name: 'Twitter', href: '#', icon: TwitterIcon },
   { name: 'LinkedIn', href: '#', icon: LinkedInIcon },
   { name: 'Facebook', href: '#', icon: FacebookIcon },
-  { name: 'Instagram', href: '#', icon: InstagramIcon },
+  { name: 'Instagram', href: 'https://www.instagram.com/cividata_co/', icon: InstagramIcon },
 ]
 
 const productLinks = [
