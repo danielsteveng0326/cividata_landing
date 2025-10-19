@@ -1,16 +1,13 @@
 {
   "name": "cividata-landing",
   "version": "1.0.0",
-  "description": "CiviData Landing Page - Transformando la gestión pública con datos inteligentes",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.5.18",
-    "vue-router": "^4.6.3"
+    "vue": "^3.5.18"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.0",
