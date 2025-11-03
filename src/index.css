@@ -21,27 +21,27 @@
   }
   
   .glass-card {
-    @apply glass-effect rounded-2xl p-8 transition-all duration-300;
+    @apply glass-effect rounded-xl sm:rounded-2xl p-6 sm:p-8 transition-all duration-300;
   }
   
   .glass-card:hover {
-    @apply bg-white/10 border-white/20 shadow-2xl shadow-accent/20 scale-105;
+    @apply bg-white/10 border-white/20 shadow-2xl shadow-accent/20 sm:scale-105;
   }
   
   .btn-primary {
-    @apply px-8 py-4 bg-gradient-accent text-white font-semibold rounded-full 
+    @apply px-6 sm:px-8 py-3 sm:py-4 bg-gradient-accent text-white font-semibold rounded-full 
            transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent/50
            active:scale-95;
   }
   
   .btn-outline {
-    @apply px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-full
+    @apply px-6 sm:px-8 py-3 sm:py-4 border-2 border-white/20 text-white font-semibold rounded-full
            backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:border-white/40
            hover:scale-105 active:scale-95;
   }
   
   .section-container {
-    @apply max-w-7xl mx-auto px-6 lg:px-8 py-24;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24;
   }
   
   .gradient-text {

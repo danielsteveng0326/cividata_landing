@@ -1,37 +1,37 @@
 <template>
-  <section id="modules" class="relative py-32 overflow-hidden">
+  <section id="modules" class="relative py-16 sm:py-24 md:py-32 overflow-hidden">
     <!-- Background Effects -->
     <div class="absolute inset-0 bg-gradient-radial opacity-30"></div>
     
     <div class="section-container relative z-10">
       <!-- Section Header -->
-      <div class="text-center mb-20">
-        <h2 class="text-4xl md:text-6xl font-bold mb-6">
+      <div class="text-center mb-12 sm:mb-16 md:mb-20 px-4 sm:px-0">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
           <span class="gradient-text">Nuestros Módulos</span>
           <br />
           <span class="text-white">Inteligentes</span>
         </h2>
-        <p class="text-lg text-white/70 max-w-2xl mx-auto">
+        <p class="text-base sm:text-lg text-white/70 max-w-2xl mx-auto">
           Soluciones integradas que transforman la forma en que los gobiernos gestionan información y toman decisiones.
         </p>
       </div>
 
       <!-- Modules Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-4 sm:px-0">
         <router-link
           v-for="(module, index) in modules" 
           :key="index"
           :to="module.route"
-          class="glass-card group cursor-pointer block"
+          class="glass-card group cursor-pointer block py-6 sm:py-8"
           :style="{ animationDelay: `${index * 0.1}s` }"
         >
           <!-- Icon -->
-          <div class="w-14 h-14 bg-gradient-accent rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-            <component :is="module.icon" class="w-7 h-7 text-white" />
+          <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-accent rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+            <component :is="module.icon" class="w-6 h-6 sm:w-7 sm:h-7 text-white" />
           </div>
 
           <!-- Content -->
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors duration-300">
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-accent transition-colors duration-300">
             {{ module.name }}
           </h3>
           <p class="text-white/60 text-sm leading-relaxed">
@@ -39,8 +39,8 @@
           </p>
 
           <!-- Hover Arrow -->
-          <div class="mt-6 flex items-center text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <span class="text-sm font-medium">Conocer más</span>
+          <div class="mt-4 sm:mt-6 flex items-center text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-xs sm:text-sm font-medium">Conocer más</span>
             <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>

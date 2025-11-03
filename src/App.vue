@@ -30,10 +30,10 @@
       <button
         v-if="showScrollTop"
         @click="scrollToTop"
-        class="fixed bottom-8 right-8 z-40 w-12 h-12 glass-effect rounded-full flex items-center justify-center hover:bg-white/10 hover:scale-110 transition-all duration-300 group"
+        class="fixed bottom-6 right-4 sm:bottom-8 sm:right-8 z-40 w-11 h-11 sm:w-12 sm:h-12 glass-effect rounded-full flex items-center justify-center hover:bg-white/10 hover:scale-110 transition-all duration-300 group"
         aria-label="Scroll to top"
       >
-        <svg class="w-6 h-6 text-white group-hover:text-accent transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:text-accent transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
         </svg>
       </button>

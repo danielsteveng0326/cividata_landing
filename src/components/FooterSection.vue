@@ -1,14 +1,14 @@
 <template>
   <footer class="relative border-t border-white/10">
-    <div class="section-container py-16">
-      <div class="grid md:grid-cols-4 gap-12 mb-12">
+    <div class="section-container py-12 sm:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12 px-4 sm:px-0">
         <!-- Brand -->
         <div class="md:col-span-2">
-          <div class="mb-6">
+          <div class="mb-4 sm:mb-6">
             <img 
               src="/Logo_Blanco.svg" 
               alt="CiviData" 
-              class="h-12 md:h-14 w-auto"
+              class="h-10 sm:h-12 md:h-14 w-auto"
             />
           </div>
           <p class="text-white/60 text-sm leading-relaxed max-w-md">
@@ -16,25 +16,25 @@
           </p>
           
           <!-- Social Links -->
-          <div class="flex items-center space-x-4 mt-6">
+          <div class="flex items-center space-x-3 sm:space-x-4 mt-5 sm:mt-6">
             <a 
               v-for="social in socialLinks" 
               :key="social.name"
               :href="social.href"
-              class="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-white/10 hover:border-accent/50 transition-all duration-300 group"
+              class="w-9 h-9 sm:w-10 sm:h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-white/10 hover:border-accent/50 transition-all duration-300 group"
               :aria-label="social.name"
             >
-              <component :is="social.icon" class="w-5 h-5 text-white/60 group-hover:text-accent transition-colors duration-300" />
+              <component :is="social.icon" class="w-4 h-4 sm:w-5 sm:h-5 text-white/60 group-hover:text-accent transition-colors duration-300" />
             </a>
           </div>
         </div>
 
         <!-- Links Columns -->
         <div>
-          <h3 class="text-white font-semibold mb-4">Producto</h3>
-          <ul class="space-y-3">
+          <h3 class="text-white font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Producto</h3>
+          <ul class="space-y-2 sm:space-y-3">
             <li v-for="link in productLinks" :key="link.name">
-              <a :href="link.href" class="text-white/60 hover:text-white text-sm transition-colors duration-300">
+              <a :href="link.href" class="text-white/60 hover:text-white text-xs sm:text-sm transition-colors duration-300">
                 {{ link.name }}
               </a>
             </li>
@@ -54,8 +54,8 @@
       </div>
 
       <!-- Bottom Bar -->
-      <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-white/40 text-sm">
+      <div class="pt-6 sm:pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 px-4 sm:px-0">
+        <p class="text-white/40 text-xs sm:text-sm text-center md:text-left">
           © {{ currentYear }} civiData. Todos los derechos reservados.
         </p>
         <div class="flex items-center space-x-6">

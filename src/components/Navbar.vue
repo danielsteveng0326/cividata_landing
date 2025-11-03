@@ -5,14 +5,14 @@
       isScrolled ? 'glass-effect shadow-lg' : 'bg-transparent'
     ]"
   >
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
         <!-- Logo -->
         <router-link to="/" class="flex items-center group">
           <img 
             src="/Logo_Blanco.svg" 
             alt="CiviData" 
-            class="h-8 md:h-12 w-auto group-hover:scale-105 transition-transform duration-300"
+            class="h-7 sm:h-8 md:h-12 w-auto group-hover:scale-105 transition-transform duration-300"
           />
         </router-link>
 
@@ -36,6 +36,7 @@
         <button 
           @click="mobileMenuOpen = !mobileMenuOpen"
           class="md:hidden p-2 rounded-lg glass-effect hover:bg-white/10 transition-colors"
+          aria-label="Toggle menu"
         >
           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path 
@@ -70,17 +71,17 @@
         v-if="mobileMenuOpen"
         class="md:hidden glass-effect border-t border-white/10"
       >
-        <div class="px-6 py-6 space-y-4">
+        <div class="px-4 sm:px-6 py-5 space-y-3">
           <a 
             v-for="link in navLinks" 
             :key="link.name"
             :href="link.href"
             @click.prevent="navigateToSection(link.href); mobileMenuOpen = false"
-            class="block text-white/80 hover:text-white transition-colors duration-300 text-sm font-medium py-2 cursor-pointer"
+            class="block text-white/80 hover:text-white transition-colors duration-300 text-base font-medium py-3 cursor-pointer"
           >
             {{ link.name }}
           </a>
-          <a href="https://calendly.com/cividata/nueva-reunion" @click.prevent="navigateToSection('#contact'); mobileMenuOpen = false" class="btn-primary w-full text-sm block text-center cursor-pointer">
+          <a href="https://calendly.com/cividata/nueva-reunion" @click.prevent="navigateToSection('#contact'); mobileMenuOpen = false" class="btn-primary w-full text-base block text-center cursor-pointer py-3">
             Agenda una demo
           </a>
         </div>
