@@ -42,8 +42,8 @@
               </svg>
             </div>
             <div class="text-white/60 text-xs sm:text-sm mb-2">Email</div>
-            <a href="mailto:info@cividata.com" class="text-white font-medium hover:text-accent transition-colors duration-300 text-sm sm:text-base">
-              info@cividata.com
+            <a href="mailto:info@cividata.co" class="text-white font-medium hover:text-accent transition-colors duration-300 text-sm sm:text-base">
+              info@cividata.co
             </a>
           </div>
 
