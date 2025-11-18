@@ -8,10 +8,19 @@ const routes = [
     component: Home
   },
   {
+    path: '/paa',
+    name: 'PAA',
+    component: () => import('../views/PAA.vue'),
+    meta: {
+      title: 'Plan Anual de Adquisiciones',
+      description: 'Descarga automática del PAA de cualquier entidad pública de Colombia'
+    }
+  },
+  {
     path: '/modulos/plan-desarrollo',
     name: 'PlanDesarrollo',
     component: () => import('../views/modules/PlanDesarrollo.vue'),
-    meta: { 
+    meta: {
       title: 'Observatorio de Plan de Desarrollo',
       description: 'Visualiza el cumplimiento del plan de desarrollo'
     }
