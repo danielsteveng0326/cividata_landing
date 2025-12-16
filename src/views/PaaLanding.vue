@@ -9,17 +9,17 @@
 
     <!-- Main Content -->
     <div class="relative z-10 pt-24 sm:pt-32 pb-16 px-4 sm:px-6 lg:px-8">
-      <!-- Badges -->
+      <!-- Urgency Badges -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8 sm:mb-12">
-        <div class="badge-pill">
-          <span class="badge-dot"></span>
-          Lanzamiento Nacional 2026
+        <div class="badge-pill bg-red-500/20 border-red-500/60 text-red-300 animate-pulse">
+          <span class="w-2 h-2 bg-red-400 rounded-full animate-ping"></span>
+          🚨 QUEDAN {{ diasRestantes }} DÍAS PARA LEY DE GARANTÍAS
         </div>
-        <div class="badge-pill">
+        <div class="badge-pill bg-orange-500/20 border-orange-500/60 text-orange-300">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
           </svg>
-          Exclusivo para Entidades Públicas
+          ⚡ PAA OBLIGATORIO ANTES 31 ENERO 2026
         </div>
       </div>
 
@@ -27,18 +27,35 @@
       <div class="max-w-6xl mx-auto text-center mb-16 sm:mb-20">
         <!-- Main Title -->
         <h1 class="hero-title mb-6 sm:mb-8">
-          <span class="block text-white">Tu Plan Anual de Adquisiciones para tu vigencia 2026 en un clic.</span>
-          <span class="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-transparent bg-clip-text">
-            Automático, Gratuito y en segundos.
+          <span class="block text-red-400 font-black">🚨 ¿Tu PAA 2026 está listo?</span>
+          <span class="block text-white">Sin él, tu entidad arriesga multas de</span>
+          <span class="block text-red-400 font-black">hasta $2.000 MILLONES</span>
+          <span class="block bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 text-transparent bg-clip-text">
+            🎁 Genéralo GRATIS con IA en 5 minutos
           </span>
-          <span class="block text-white"></span>
         </h1>
 
         <!-- Subtitle -->
-        <p class="hero-subtitle max-w-3xl mx-auto mb-12 sm:mb-16">
-          Prepárate para la herramienta que cambiará la forma en que las entidades públicas
-          de Colombia gestionan su Contratación Estatal.
-        </p>
+        <div class="max-w-4xl mx-auto mb-12 sm:mb-16">
+          <p class="hero-subtitle mb-6">
+            <span class="text-yellow-400 font-bold">⚡ URGENTE:</span> El <span class="text-red-400 font-bold">31 de enero de 2026</span> inicia la Ley de Garantías.
+            <span class="text-white">Tu PAA DEBE estar publicado o enfrentas:</span>
+          </p>
+          <div class="grid sm:grid-cols-3 gap-4 text-sm">
+            <div class="bg-red-500/20 rounded-lg p-3 border border-red-500/40">
+              <div class="text-red-300 font-bold">💸 Multas millonarias</div>
+              <div class="text-white/70">Hasta $2.000M por Procuraduría</div>
+            </div>
+            <div class="bg-orange-500/20 rounded-lg p-3 border border-orange-500/40">
+              <div class="text-orange-300 font-bold">🚫 Bloqueo contratación</div>
+              <div class="text-white/70">No podrás contratar directamente</div>
+            </div>
+            <div class="bg-red-500/20 rounded-lg p-3 border border-red-500/40">
+              <div class="text-red-300 font-bold">📄 Procesos disciplinarios</div>
+              <div class="text-white/70">Investigaciones por incumplimiento</div>
+            </div>
+          </div>
+        </div>
 
         <!-- Countdown or Launch Message -->
         <div v-if="!isLaunched" class="mb-12 sm:mb-16">
@@ -75,13 +92,20 @@
         </transition>
 
         <!-- CTA Section -->
-        <div v-if="!isLaunched" class="cta-section">
-          <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">
-            Asegura tu PAA prioritario
-          </h3>
-          <p class="text-base sm:text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-            Déjanos tu correo institucional y entra a la lista de espera exclusiva.
-          </p>
+        <div v-if="!isLaunched" class="cta-section bg-gradient-to-br from-green-500/20 to-blue-500/10 border border-green-500/40">
+          <div class="text-center mb-6">
+            <div class="text-5xl mb-4">🎁</div>
+            <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+              🚀 GENERACIÓN GRATUITA DE PAA 2026 ACTIVADA
+            </h3>
+            <p class="text-base sm:text-lg text-green-300 mb-4 font-semibold">
+              ✅ Listo para SECOP II • ✅ 100% Compatible • ✅ Cero errores
+            </p>
+            <p class="text-base text-white/70 mb-8 max-w-2xl mx-auto">
+              Ingresa tu correo institucional y genera tu PAA con IA. 
+              <span class="text-yellow-400 font-bold">Completamente gratis</span> como muestra de CiviData.
+            </p>
+          </div>
 
           <!-- Email Form -->
           <form @submit.prevent="handleSubmit" class="max-w-xl mx-auto">
@@ -121,13 +145,20 @@
         </div>
 
         <!-- Download Section (After Launch) -->
-        <div v-else class="cta-section">
-          <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">
-            Descarga tu PAA automáticamente
-          </h3>
-          <p class="text-base sm:text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-            Ingresa el NIT o nombre de tu entidad para descargar el Plan Anual de Adquisiciones
-          </p>
+        <div v-else class="cta-section bg-gradient-to-br from-green-500/20 to-blue-500/10 border border-green-500/40">
+          <div class="text-center mb-6">
+            <div class="text-5xl mb-4">🚀</div>
+            <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+              ✅ PAA 2026 - GENERACIÓN ACTIVADA
+            </h3>
+            <div class="bg-green-500/20 rounded-lg p-4 mb-6 border border-green-500/40">
+              <p class="text-green-300 font-bold mb-2">⚡ Últimas {{ diasRestantes }} días antes de Ley de Garantías</p>
+              <p class="text-white/80 text-sm">Genera tu PAA ahora y evita multas millonarias</p>
+            </div>
+            <p class="text-base sm:text-lg text-white/70 mb-8 max-w-2xl mx-auto">
+              Ingresa el NIT o nombre de tu entidad. La IA generará tu PAA 2026 completo y listo para SECOP.
+            </p>
+          </div>
 
           <!-- Download Form -->
           <form @submit.prevent="handleDownload" class="max-w-xl mx-auto">
@@ -236,12 +267,24 @@ const isSubmitting = ref(false)
 const isLaunched = ref(false)
 const nitEntity = ref('')
 const isDownloading = ref(false)
+const diasRestantes = ref(0)
+
+const calcularDiasRestantes = () => {
+  const fechaLimite = new Date('2026-01-31T23:59:59-05:00')
+  const ahora = new Date()
+  const diferencia = fechaLimite.getTime() - ahora.getTime()
+  diasRestantes.value = Math.max(0, Math.ceil(diferencia / (1000 * 60 * 60 * 24)))
+}
 
 // Check if already launched (for testing, you can manually set this)
 onMounted(() => {
   const targetDate = new Date('2025-12-31T23:59:00-05:00')
   const now = new Date()
   isLaunched.value = now >= targetDate
+  
+  calcularDiasRestantes()
+  // Actualizar cada hora
+  setInterval(calcularDiasRestantes, 1000 * 60 * 60)
 })
 
 const validateEmail = (emailValue) => {

@@ -110,19 +110,19 @@ const modules = [
     name: 'Módulo de Contratación Estatal',
     description: 'Centraliza, analiza y visualiza los contratos públicos para mejorar la eficiencia, el control y la transparencia.',
     icon: DocumentIcon,
-    route: '/'
+    route: '/modulos/contratacion'
   },
   {
     name: 'Módulo de Derechos de Petición',
     description: 'Automatiza la gestión ciudadana y garantiza respuestas oportunas, trazables y eficientes.',
     icon: ClipboardIcon,
-    route: '/'
+    route: '/modulos/peticiones'
   },
   {
     name: 'Módulo de Cobro Coactivo Inteligente',
     description: 'Unifica y centraliza los procesos de cobro coactivo con indicadores georeferenciados en tiempo real.',
     icon: TrendingIcon,
-    route: '/'
+    route: '/modulos/ejecucion'
   }/*,
   {
     name: 'Gestión de Calidad y Transparencia',
