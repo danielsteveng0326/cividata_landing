@@ -38,88 +38,44 @@
                   :value="tipo.value"
                   class="sr-only"
                 />
-                <div 
+                <div
                   class="p-4 rounded-xl border-2 text-center transition-all duration-300"
-                  :class="calculator.tipoEntidad === tipo.value 
-                    ? 'border-accent bg-accent/20 text-white' 
+                  :class="calculator.tipoEntidad === tipo.value
+                    ? 'border-accent bg-accent/20 text-white'
                     : 'border-gray-600 bg-gray-900/50 text-white/70 hover:border-accent/50'"
                 >
                   <div class="text-2xl mb-2">{{ tipo.emoji }}</div>
                   <div class="font-medium text-sm">{{ tipo.label }}</div>
-                  <div class="text-xs opacity-70">{{ tipo.habitantes }}</div>
                 </div>
               </label>
             </div>
           </div>
 
-          <!-- Población -->
-          <div class="mb-6">
-            <label class="block text-white/80 text-sm font-medium mb-2">
-              Población Aproximada
-            </label>
-            <input
-              v-model.number="calculator.poblacion"
-              type="number"
-              min="1000"
-              class="w-full px-4 py-3 rounded-xl bg-gray-900/50 border border-gray-600 text-white focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
-              placeholder="Ej: 85000"
-            />
-          </div>
-
-          <!-- Presupuesto IT Anual -->
-          <div class="mb-6">
-            <label class="block text-white/80 text-sm font-medium mb-2">
-              Presupuesto IT Anual (COP)
-            </label>
-            <input
-              v-model.number="calculator.presupuestoIT"
-              type="number"
-              min="5000000"
-              step="1000000"
-              class="w-full px-4 py-3 rounded-xl bg-gray-900/50 border border-gray-600 text-white focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
-              placeholder="Ej: 150000000"
-            />
-          </div>
-
-          <!-- Contratos por Año -->
-          <div class="mb-6">
-            <label class="block text-white/80 text-sm font-medium mb-2">
-              Contratos por Año
-            </label>
-            <input
-              v-model.number="calculator.contratos"
-              type="number"
-              min="10"
-              class="w-full px-4 py-3 rounded-xl bg-gray-900/50 border border-gray-600 text-white focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
-              placeholder="Ej: 240"
-            />
-          </div>
-
-          <!-- Nivel de Riesgo -->
-          <div class="mb-6">
+          <!-- Categoría Municipio (solo para entidades municipales) -->
+          <div v-if="requiereCategoriaMunicipio" class="mb-6">
             <label class="block text-white/80 text-sm font-medium mb-3">
-              Nivel de Riesgo Actual
+              Categoría de Municipio *
             </label>
-            <div class="grid grid-cols-3 gap-3">
-              <label 
-                v-for="riesgo in nivelesRiesgo" 
-                :key="riesgo.value"
+            <div class="grid grid-cols-2 gap-3">
+              <label
+                v-for="categoria in categoriasMunicipio"
+                :key="categoria.value"
                 class="cursor-pointer"
               >
                 <input
-                  v-model="calculator.riesgo"
+                  v-model="calculator.categoriaMunicipio"
                   type="radio"
-                  :value="riesgo.value"
+                  :value="categoria.value"
                   class="sr-only"
                 />
-                <div 
+                <div
                   class="p-3 rounded-xl border-2 text-center transition-all duration-300"
-                  :class="calculator.riesgo === riesgo.value 
-                    ? `border-${riesgo.color} bg-${riesgo.color}/20 text-${riesgo.color}` 
-                    : 'border-gray-600 bg-gray-900/50 text-white/70 hover:border-gray-500'"
+                  :class="calculator.categoriaMunicipio === categoria.value
+                    ? 'border-accent bg-accent/20 text-white'
+                    : 'border-gray-600 bg-gray-900/50 text-white/70 hover:border-accent/50'"
                 >
-                  <div class="text-xl mb-1">{{ riesgo.emoji }}</div>
-                  <div class="font-medium text-xs">{{ riesgo.label }}</div>
+                  <div class="font-medium text-sm">{{ categoria.label }}</div>
+                  <div class="text-xs opacity-70">{{ categoria.ingresos }}</div>
                 </div>
               </label>
             </div>
@@ -252,12 +208,6 @@
                 <span class="text-orange-300 font-semibold">+{{ formatCurrency((tierRecomendado.precioBase * (multiplicadorUrgencia - 1))) }}</span>
               </div>
 
-              <!-- Multiplicador Riesgo -->
-              <div v-if="multiplicadorRiesgo > 1" class="flex justify-between items-center py-2">
-                <span class="text-red-300">Riesgo {{ calculator.riesgo }} (+{{ Math.round((multiplicadorRiesgo - 1) * 100) }}%)</span>
-                <span class="text-red-300 font-semibold">+{{ formatCurrency((tierRecomendado.precioBase * (multiplicadorRiesgo - 1))) }}</span>
-              </div>
-
               <!-- Módulos -->
               <div v-for="moduloId in calculator.modulosSeleccionados" :key="moduloId">
                 <div class="flex justify-between items-center py-2">
@@ -349,27 +299,30 @@
 import { ref, computed } from 'vue'
 
 const calculator = ref({
-  tipoEntidad: 'mediano',
-  poblacion: 50000,
-  presupuestoIT: 100000000,
-  contratos: 150,
-  riesgo: 'medio',
+  tipoEntidad: 'municipio',
+  categoriaMunicipio: 'categoria_3',
   urgencia: 'alta',
   modulosSeleccionados: ['paa', 'transparencia'],
   extrasSeleccionados: []
 })
 
 const tiposEntidad = [
-  { value: 'pequeno', label: 'Municipio Pequeño', habitantes: '< 20K hab', emoji: '🏘️' },
-  { value: 'mediano', label: 'Municipio Mediano', habitantes: '20K-100K hab', emoji: '🏙️' },
-  { value: 'grande', label: 'Municipio Grande', habitantes: '100K+ hab', emoji: '🌆' },
-  { value: 'departamento', label: 'Departamento', habitantes: '500K+ hab', emoji: '🏛️' }
+  { value: 'municipio', label: 'Municipio', emoji: '🏘️', requiereCategoria: true },
+  { value: 'ciudad_intermedia', label: 'Ciudad Intermedia', emoji: '🏙️', requiereCategoria: true },
+  { value: 'ciudad', label: 'Ciudad', emoji: '🌆', requiereCategoria: true },
+  { value: 'ese', label: 'ESE', emoji: '🏥', requiereCategoria: false },
+  { value: 'esp', label: 'ESP', emoji: '💧', requiereCategoria: false },
+  { value: 'edu', label: 'EDU', emoji: '🎓', requiereCategoria: false }
 ]
 
-const nivelesRiesgo = [
-  { value: 'bajo', label: 'Bajo', emoji: '✅', color: 'green-500' },
-  { value: 'medio', label: 'Medio', emoji: '⚠️', color: 'yellow-500' },
-  { value: 'alto', label: 'Alto', emoji: '🚨', color: 'red-500' }
+const categoriasMunicipio = [
+  { value: 'categoria_especial', label: 'Especial', ingresos: '> 600K SMLMV' },
+  { value: 'categoria_1', label: 'Categoría 1', ingresos: '100K-600K SMLMV' },
+  { value: 'categoria_2', label: 'Categoría 2', ingresos: '50K-100K SMLMV' },
+  { value: 'categoria_3', label: 'Categoría 3', ingresos: '30K-50K SMLMV' },
+  { value: 'categoria_4', label: 'Categoría 4', ingresos: '25K-30K SMLMV' },
+  { value: 'categoria_5', label: 'Categoría 5', ingresos: '15K-25K SMLMV' },
+  { value: 'categoria_6', label: 'Categoría 6', ingresos: '< 15K SMLMV' }
 ]
 
 const nivelesUrgencia = [
@@ -399,22 +352,24 @@ const extras = [
 ]
 
 const tiers = {
-  pequeno: { nombre: 'Esencial', precioBase: 12000000, color: 'blue-500', emoji: '⚡', descripcion: 'Para municipios pequeños' },
-  mediano: { nombre: 'Profesional', precioBase: 35000000, color: 'purple-500', emoji: '🚀', descripcion: 'Para municipios medianos' },
-  grande: { nombre: 'Enterprise', precioBase: 85000000, color: 'orange-500', emoji: '👑', descripcion: 'Para municipios grandes' },
-  departamento: { nombre: 'Enterprise Plus', precioBase: 150000000, color: 'red-500', emoji: '💎', descripcion: 'Para departamentos' }
+  municipio: { nombre: 'Esencial', precioBase: 12000000, color: 'blue-500', emoji: '⚡', descripcion: 'Para municipios' },
+  ciudad_intermedia: { nombre: 'Profesional', precioBase: 35000000, color: 'purple-500', emoji: '🚀', descripcion: 'Para ciudades intermedias' },
+  ciudad: { nombre: 'Enterprise', precioBase: 85000000, color: 'orange-500', emoji: '👑', descripcion: 'Para ciudades' },
+  ese: { nombre: 'ESE', precioBase: 45000000, color: 'green-500', emoji: '🏥', descripcion: 'Para Empresas Sociales del Estado' },
+  esp: { nombre: 'ESP', precioBase: 55000000, color: 'cyan-500', emoji: '💧', descripcion: 'Para Empresas de Servicios Públicos' },
+  edu: { nombre: 'EDU', precioBase: 40000000, color: 'yellow-500', emoji: '🎓', descripcion: 'Para entidades educativas' }
 }
+
+const requiereCategoriaMunicipio = computed(() => {
+  const tipoActual = tiposEntidad.find(t => t.value === calculator.value.tipoEntidad)
+  return tipoActual?.requiereCategoria || false
+})
 
 const tierRecomendado = computed(() => tiers[calculator.value.tipoEntidad])
 
 const multiplicadorUrgencia = computed(() => {
   const multipliers = { baja: 1, media: 1.25, alta: 1.5, critica: 1.75 }
   return multipliers[calculator.value.urgencia] || 1
-})
-
-const multiplicadorRiesgo = computed(() => {
-  const multipliers = { bajo: 1, medio: 1.15, alto: 1.3 }
-  return multipliers[calculator.value.riesgo] || 1
 })
 
 const costoModulos = computed(() => {
@@ -433,7 +388,7 @@ const costoExtras = computed(() => {
 
 const precioSuscripcion = computed(() => {
   const base = tierRecomendado.value.precioBase
-  const conMultiplicadores = base * multiplicadorUrgencia.value * multiplicadorRiesgo.value
+  const conMultiplicadores = base * multiplicadorUrgencia.value
   return conMultiplicadores + costoModulos.value + costoExtras.value
 })
 
@@ -446,9 +401,16 @@ const precioTotal = computed(() => {
 })
 
 const perdidasEstimadas = computed(() => {
-  const basePerdidas = calculator.value.contratos * 500000 // 500k por contrato mal gestionado
-  const riesgoMultiplier = { bajo: 1, medio: 1.5, alto: 2.5 }
-  return basePerdidas * riesgoMultiplier[calculator.value.riesgo]
+  // Estimación base de pérdidas según tipo de entidad
+  const basesPerdidas = {
+    municipio: 25000000,
+    ciudad_intermedia: 75000000,
+    ciudad: 180000000,
+    ese: 90000000,
+    esp: 120000000,
+    edu: 60000000
+  }
+  return basesPerdidas[calculator.value.tipoEntidad] || 50000000
 })
 
 const ahorroAnual = computed(() => {
