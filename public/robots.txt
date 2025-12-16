@@ -1,0 +1,29 @@
+# robots.txt for https://cividata.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://cividata.com/sitemap.xml
+
+# Allow all major crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# Crawl-delay for general bots
+Crawl-delay: 1
+
+# Specific instructions for better indexing of government-related content
+# No disallowed paths - we want all content indexed for SECOP, Colombia Compra Eficiente, SIGEP, DNP searches

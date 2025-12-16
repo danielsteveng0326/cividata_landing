@@ -39,8 +39,8 @@ const routes = [
     name: 'Contratacion',
     component: () => import('../views/modules/Contratacion.vue'),
     meta: { 
-      title: 'Módulo de Contratación Estatal',
-      description: 'Centraliza y analiza contratos públicos'
+      title: 'SECOP, Colombia Compra Eficiente - Módulo de Contratación Estatal',
+      description: 'Integración con SECOP y Colombia Compra Eficiente. Centraliza y analiza contratos públicos, licitaciones y procurement para entidades gubernamentales'
     }
   },
   {
@@ -57,8 +57,8 @@ const routes = [
     name: 'Ejecucion',
     component: () => import('../views/modules/Ejecucion.vue'),
     meta: { 
-      title: 'Módulo de Ejecución y Avance',
-      description: 'Evalúa la ejecución presupuestal'
+      title: 'SIGEP, DNP - Módulo de Ejecución y Avance Presupuestal',
+      description: 'Integración con SIGEP y DNP para evaluar la ejecución presupuestal y seguimiento de proyectos de inversión pública'
     }
   },
   {
@@ -66,17 +66,26 @@ const routes = [
     name: 'Calidad',
     component: () => import('../views/modules/Calidad.vue'),
     meta: { 
-      title: 'Gestión de Calidad y Transparencia',
-      description: 'Seguimiento de indicadores y auditorías'
+      title: 'Colombia Compra Eficiente - Gestión de Calidad y Transparencia',
+      description: 'Seguimiento de indicadores de transparencia según estándares de Colombia Compra Eficiente, auditorías y control interno gubernamental'
     }
   },
   {
     path: '/modulos/ia',
     name: 'IA',
     component: () => import('../views/modules/IA.vue'),
-    meta: { 
-      title: 'Asistentes de IA',
-      description: 'Inteligencia artificial para decisiones'
+    meta: {
+      title: 'IA SECOP, SIGEP - Asistentes de Inteligencia Artificial Gubernamental',
+      description: 'Inteligencia artificial especializada en SECOP, SIGEP, Colombia Compra Eficiente y DNP para optimizar decisiones en contratación pública'
+    }
+  },
+  {
+    path: '/paa',
+    name: 'PAA',
+    component: () => import('../views/PaaLanding.vue'),
+    meta: {
+      title: 'PAA 2026 SECOP - Plan Anual de Adquisiciones Colombia Compra Eficiente',
+      description: 'Descarga automática del Plan Anual de Adquisiciones 2026 desde SECOP. Compatible con Colombia Compra Eficiente y DNP para entidades públicas'
     }
   }
 ]
@@ -95,11 +104,41 @@ const router = createRouter({
   }
 })
 
-// Update document title
+// Update document title and meta description
 router.beforeEach((to, from, next) => {
+  // Update title
   document.title = to.meta.title 
     ? `${to.meta.title} | CiviData` 
-    : 'CiviData | Datos que transforman la gestión pública'
+    : 'CiviData | SECOP, Colombia Compra Eficiente, SIGEP, DNP - Datos que transforman la contratación pública'
+  
+  // Update meta description
+  const metaDescription = document.querySelector('meta[name="description"]')
+  if (metaDescription && to.meta.description) {
+    metaDescription.setAttribute('content', to.meta.description)
+  }
+  
+  // Update Open Graph tags
+  const ogTitle = document.querySelector('meta[property="og:title"]')
+  const ogDescription = document.querySelector('meta[property="og:description"]')
+  const twitterTitle = document.querySelector('meta[property="twitter:title"]')
+  const twitterDescription = document.querySelector('meta[property="twitter:description"]')
+  
+  if (ogTitle) {
+    ogTitle.setAttribute('content', document.title)
+  }
+  
+  if (ogDescription && to.meta.description) {
+    ogDescription.setAttribute('content', to.meta.description)
+  }
+  
+  if (twitterTitle) {
+    twitterTitle.setAttribute('content', document.title)
+  }
+  
+  if (twitterDescription && to.meta.description) {
+    twitterDescription.setAttribute('content', to.meta.description)
+  }
+  
   next()
 })
 

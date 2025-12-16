@@ -45,8 +45,12 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import Navbar from './components/Navbar.vue'
 import FooterSection from './components/FooterSection.vue'
+import { useSEO, trackSEOEvent } from './composables/useSEO.js'
 
 const showScrollTop = ref(false)
+
+// Initialize SEO
+const { updateSEOTags } = useSEO()
 
 const handleScroll = () => {
   showScrollTop.value = window.scrollY > 500
@@ -57,10 +61,16 @@ const scrollToTop = () => {
     top: 0,
     behavior: 'smooth'
   })
+  
+  // Track scroll to top for SEO analytics
+  trackSEOEvent('scroll_to_top', window.location.pathname, 'user_interaction')
 }
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+  
+  // Track page load for SEO
+  trackSEOEvent('page_load', window.location.pathname, 'SECOP,Colombia Compra Eficiente,SIGEP,DNP')
 })
 
 onUnmounted(() => {
