@@ -87,6 +87,15 @@ const routes = [
       title: 'PAA 2026 SECOP - Plan Anual de Adquisiciones Colombia Compra Eficiente',
       description: 'Descarga automática del Plan Anual de Adquisiciones 2026 desde SECOP. Compatible con Colombia Compra Eficiente y DNP para entidades públicas'
     }
+  },
+  {
+    path: '/calcular',
+    name: 'Calculator',
+    component: () => import('../views/CalculatorView.vue'),
+    meta: {
+      title: 'Calculadora de Precios CiviData - Cotización Personalizada B2G',
+      description: 'Calcula el precio exacto de CiviData para tu entidad pública. Cotización personalizada basada en necesidades específicas y presupuesto.'
+    }
   }
 ]
 
