@@ -320,18 +320,36 @@ const handleSubmit = async () => {
   isSubmitting.value = true
 
   try {
-    // Simulate API call - Replace with actual endpoint
-    await new Promise(resolve => setTimeout(resolve, 1500))
+    // Enviar a Formspree
+    const response = await fetch('https://formspree.io/f/mnnekakp', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email.value,
+        tipo: 'PAA_2026_Waitlist',
+        fecha: new Date().toISOString(),
+        urgencia: `${diasRestantes.value} días restantes`,
+        source: 'PAA Landing'
+      })
+    })
 
-    // TODO: Replace with actual API call
-    // await fetch('/api/waitlist', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ email: email.value })
-    // })
-
-    successMessage.value = '¡Registro exitoso! Te notificaremos cuando esté disponible.'
-    email.value = ''
+    if (response.ok) {
+      successMessage.value = '¡Registro exitoso! Te notificaremos cuando esté disponible.'
+      email.value = ''
+      
+      // Track en Google Analytics
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'paa_email_registered', {
+          event_category: 'PAA',
+          event_label: 'Waitlist Registration',
+          value: 1
+        })
+      }
+    } else {
+      throw new Error('Error en el servidor')
+    }
 
     setTimeout(() => {
       successMessage.value = ''

@@ -5,33 +5,8 @@
 
     <div class="section-container relative z-10">
       <div class="max-w-4xl mx-auto">
-        <!-- Header -->
-        <div class="text-center mb-12 sm:mb-16 px-4 sm:px-0">
-          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
-            <span class="text-white">Hablemos de</span>
-            <br />
-            <span class="gradient-text">innovación pública</span>
-          </h2>
-          <p class="text-base sm:text-lg text-white/70 max-w-2xl mx-auto mb-8 sm:mb-12">
-            Agenda una demo personalizada y descubre cómo CiviData puede transformar la toma de decisiones en tu entidad.
-          </p>
-
-          <!-- CTA Button -->
-          <a 
-            :href="agendaUrl" 
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center btn-primary text-base sm:text-lg px-8 sm:px-12 py-4 sm:py-5 group w-full sm:w-auto"
-          >
-            <svg class="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            Agenda una demostración
-            <svg class="w-4 h-4 sm:w-5 sm:h-5 ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
-        </div>
+        <!-- Contact Form -->
+        <ContactForm />
 
         <!-- Contact Info -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-12 sm:mt-16 px-4 sm:px-0">
@@ -76,7 +51,5 @@
 </template>
 
 <script setup>
-// URL de tu agenda virtual (Calendly, Google Calendar, etc.)
-// Cambia esta URL por la de tu servicio de agendamiento
-const agendaUrl = 'https://calendly.com/cividata/nueva-reunion'
+import ContactForm from './ContactForm.vue'
 </script>
