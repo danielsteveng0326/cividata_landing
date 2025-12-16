@@ -3,10 +3,10 @@
     <div class="section-container relative z-10">
       <!-- Header -->
       <div class="text-center mb-12 sm:mb-16">
-        <div class="inline-flex items-center space-x-2 glass-effect px-6 py-3 rounded-full mb-6 bg-green-500/20 border border-green-500/50">
+        <!-- <div class="inline-flex items-center space-x-2 glass-effect px-6 py-3 rounded-full mb-6 bg-green-500/20 border border-green-500/50">
           <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
           <span class="text-sm text-green-300 font-semibold">✅ CASOS DE ÉXITO COMPROBADOS</span>
-        </div>
+        </div> -->
         
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
           <span class="text-white">Entidades que ya</span>
@@ -95,9 +95,9 @@
 
       <!-- Entities Logos Section -->
       <div class="text-center mb-16">
-        <h3 class="text-xl font-bold text-white mb-8">
+        <!-- <h3 class="text-xl font-bold text-white mb-8">
           Confían en CiviData para su gestión pública:
-        </h3>
+        </h3> -->
         
         <!-- Simulated entity badges -->
         <div class="flex flex-wrap justify-center items-center gap-6 opacity-70">

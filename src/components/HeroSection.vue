@@ -75,7 +75,7 @@
         </div>
         
         <!-- Secondary CTAs -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-2 pt-4 animate-slide-up px-4 sm:px-0" style="animation-delay: 0.5s;">
+        <!-- <div class="flex flex-col sm:flex-row items-center justify-center gap-2 pt-4 animate-slide-up px-4 sm:px-0" style="animation-delay: 0.5s;">
           <a href="#audit" class="text-blue-400 hover:text-blue-300 underline text-sm sm:text-base">
             🔍 Auditoría gratuita de riesgos de transparencia
           </a>
@@ -83,7 +83,7 @@
           <a href="#demo" class="text-purple-400 hover:text-purple-300 underline text-sm sm:text-base">
             📺 Demo con tus datos reales de SECOP
           </a>
-        </div>
+        </div> -->
 
         <!-- Stats -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 pt-12 sm:pt-16 max-w-3xl mx-auto animate-scale-in px-4 sm:px-0" style="animation-delay: 0.6s;">

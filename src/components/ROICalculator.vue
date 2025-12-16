@@ -4,10 +4,10 @@
       <div class="max-w-4xl mx-auto">
         <!-- Header -->
         <div class="text-center mb-8 sm:mb-12">
-          <div class="inline-flex items-center space-x-2 glass-effect px-6 py-3 rounded-full mb-6">
+          <!-- <div class="inline-flex items-center space-x-2 glass-effect px-6 py-3 rounded-full mb-6">
             <span class="w-2 h-2 bg-red-400 rounded-full animate-pulse"></span>
             <span class="text-sm text-red-300 font-semibold">⚠️ CALCULADORA DE PÉRDIDAS</span>
-          </div>
+          </div> -->
           <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             <span class="text-red-400">¿Cuánto pierdes</span>
             <br />
